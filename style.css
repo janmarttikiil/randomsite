@@ -44,11 +44,48 @@ input {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-#askBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
 #answer{
  font-size: 150px;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#answer.fadeIn {
+  animation: fadeIn 1s ease-in;
+}
+
+#answer.fadeOut {
+  animation: fadeOut 1s ease-out;
 }
